@@ -360,7 +360,12 @@ let arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // Write your code here...
 console.log("EXERCISE 02 - MY ANSWERS");
 
-
+console.log("a) " + arr2.map((array) => array * 3));
+console.log("b) " + arr2.filter(n => n % 2 !== 0));
+console.log("c) " + arr2.reduce((acc, curr) => acc + curr, 0));
+console.log("d) " + arr2.reduce((acc, curr) => acc * curr));
+console.log("e) " + arr2.every(n => n > 0));
+console.log("f) " + arr2.some(n => n > 8));
 
 /*
 // EXERCISE 3: Array Search and Find
