@@ -79,6 +79,357 @@ console.log("Is 'racecar' a palindrome?", isPalindrome("racecar"));
 console.log("Is 'hello' a palindrome?", isPalindrome("hello"));
 
 // ============================================
+// STRING EXERCISES - Practice Problems
+// ============================================
+
+console.log("\n🎯 STRING MANIPULATION EXERCISES");
+console.log("Practice these string problems step by step!\n");
+
+// EXERCISE 1: Basic String Operations
+console.log("📝 EXERCISE 1: Basic String Operations");
+console.log("Given string: 'JavaScript Programming'");
+console.log("Tasks:");
+console.log("a) Convert to lowercase");
+console.log("b) Convert to uppercase");
+console.log("c) Get the length of the string");
+console.log("d) Get the character at index 5");
+console.log("e) Get the last character");
+console.log("f) Check if it contains 'Script'");
+console.log("g) Replace 'JavaScript' with 'Python'");
+console.log("Write your solution below:\n");
+
+// Your solution for Exercise 1:
+let str1 = 'JavaScript Programming';
+
+console.log("My answers - Exercise 01");
+
+console.log("a) " + str1.toLowerCase());
+console.log("b) " + str1.toUpperCase());
+console.log("c) length: " + str1.length);
+console.log("d) index 5 = " + str1[5]);
+console.log("e) last character = " + str1[str1.length - 1]);
+console.log("f) Includes 'script'? = " + str1.includes('Script'));
+console.log("g) " + str1.replace("JavaScript", "Python"));
+console.log();
+
+console.log("EXERCISE 1 - STRING OPERATIONS");
+console.log("a) Lowercase:", str1.toLowerCase());
+console.log("b) Uppercase:", str1.toUpperCase());
+console.log("c) Length:", str1.length);
+console.log("d) Character at index 5:", str1[5]);
+console.log("e) Last character:", str1[str1.length - 1]);
+console.log("f) Contains 'Script':", str1.includes('Script'));
+console.log("g) Replace JavaScript:", str1.replace('JavaScript', 'Python'));
+console.log();
+*/
+// EXERCISE 2: String Splitting and Joining
+console.log("📝 EXERCISE 2: String Splitting and Joining");
+console.log("Given string: 'apple,banana,cherry,date'");
+console.log("Tasks:");
+console.log("a) Split into an array of fruits");
+console.log("b) Join the array back with ' | ' separator");
+console.log("c) Split by 'a' character");
+console.log("d) Get the first word only");
+console.log("e) Get the last word only");
+console.log("Write your solution below:\n");
+
+// Your solution for Exercise 2:
+let fruits = 'apple,banana,cherry,date';
+
+console.log("My answers - Exercise 02");
+
+console.log("a) " + fruits.split(','));
+console.log("b) " + fruits.split(',').join(" | "));
+console.log("c) " + fruits.split('a'));
+console.log("d) " + fruits.split(',')[0]);
+console.log("e) " + fruits.split(',').slice(-1)[0]);
+/*
+console.log("EXERCISE 2 - STRING SPLITTING/JOINING");
+console.log("a) Split by comma:", fruits.split(','));
+console.log("b) Join with |:", fruits.split(',').join(' | '));
+console.log("c) Split by 'a':", fruits.split('a'));
+console.log("d) First word:", fruits.split(',')[0]);
+console.log("e) Last word:", fruits.split(',').slice(-1)[0]);
+console.log();
+
+// EXERCISE 3: String Search and Index
+console.log("📝 EXERCISE 3: String Search and Index");
+console.log("Given string: 'The quick brown fox jumps over the lazy dog'");
+console.log("Tasks:");
+console.log("a) Find the index of 'fox'");
+console.log("b) Find the last index of 'the'");
+console.log("c) Check if it starts with 'The'");
+console.log("d) Check if it ends with 'dog'");
+console.log("e) Extract substring from index 10 to 15");
+console.log("f) Extract the word 'brown' using substring methods");
+console.log("Write your solution below:\n");
+
+// Your solution for Exercise 3:
+let sentence = 'The quick brown fox jumps over the lazy dog';
+console.log("EXERCISE 3 - STRING SEARCH/INDEX");
+console.log("a) Index of 'fox':", sentence.indexOf('fox'));
+console.log("b) Last index of 'the':", sentence.lastIndexOf('the'));
+console.log("c) Starts with 'The':", sentence.startsWith('The'));
+console.log("d) Ends with 'dog':", sentence.endsWith('dog'));
+console.log("e) Substring 10-15:", sentence.substring(10, 15));
+console.log("f) Extract 'brown':", sentence.substring(10, 15));
+console.log();
+
+// EXERCISE 4: String Validation and Patterns
+console.log("📝 EXERCISE 4: String Validation and Patterns");
+console.log("Tasks:");
+console.log("a) Check if 'abc123' contains only alphanumeric characters");
+console.log("b) Count vowels in 'programming'");
+console.log("c) Count consonants in 'javascript'");
+console.log("d) Check if 'A man a plan a canal Panama' is a palindrome (ignore spaces/case)");
+console.log("e) Find the longest word in 'The quick brown fox'");
+console.log("Write your solution below:\n");
+
+// Your solution for Exercise 4:
+console.log("EXERCISE 4 - STRING VALIDATION/PATTERNS");
+
+// a) Alphanumeric check
+function isAlphanumeric(str) {
+    return /^[a-zA-Z0-9]+$/.test(str);
+}
+console.log("a) 'abc123' is alphanumeric:", isAlphanumeric('abc123'));
+
+// b) Count vowels
+function countVowels(str) {
+    return str.toLowerCase().match(/[aeiou]/g)?.length || 0;
+}
+console.log("b) Vowels in 'programming':", countVowels('programming'));
+
+// c) Count consonants
+function countConsonants(str) {
+    return str.toLowerCase().match(/[bcdfghjklmnpqrstvwxyz]/g)?.length || 0;
+}
+console.log("c) Consonants in 'javascript':", countConsonants('javascript'));
+
+// d) Palindrome check (ignore spaces/case)
+function isPalindromeAdvanced(str) {
+    const cleaned = str.toLowerCase().replace(/[^a-z]/g, '');
+    return cleaned === cleaned.split('').reverse().join('');
+}
+console.log("d) 'A man a plan a canal Panama' is palindrome:", isPalindromeAdvanced('A man a plan a canal Panama'));
+
+// e) Longest word
+function findLongestWord(str) {
+    const words = str.split(' ');
+    return words.reduce((longest, current) => current.length > longest.length ? current : longest);
+}
+console.log("e) Longest word in 'The quick brown fox':", findLongestWord('The quick brown fox'));
+console.log();
+
+// EXERCISE 5: String Transformation
+console.log("📝 EXERCISE 5: String Transformation");
+console.log("Tasks:");
+console.log("a) Convert 'hello world' to title case: 'Hello World'");
+console.log("b) Convert 'camelCase' to 'snake_case'");
+console.log("c) Convert 'snake_case' to 'camelCase'");
+console.log("d) Reverse words in 'hello world javascript' -> 'javascript world hello'");
+console.log("e) Remove all whitespace from '  hello   world  '");
+console.log("f) Add padding: center 'hello' in a string of length 10 with '*'");
+console.log("Write your solution below:\n");
+
+// Your solution for Exercise 5:
+console.log("EXERCISE 5 - STRING TRANSFORMATION");
+
+// a) Title case
+function toTitleCase(str) {
+    return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
+}
+console.log("a) Title case:", toTitleCase('hello world'));
+
+// b) camelCase to snake_case
+function camelToSnake(str) {
+    return str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
+}
+console.log("b) camelCase to snake_case:", camelToSnake('camelCase'));
+
+// c) snake_case to camelCase
+function snakeToCamel(str) {
+    return str.replace(/_([a-z])/g, (match, letter) => letter.toUpperCase());
+}
+console.log("c) snake_case to camelCase:", snakeToCamel('snake_case'));
+
+// d) Reverse words
+function reverseWords(str) {
+    return str.split(' ').reverse().join(' ');
+}
+console.log("d) Reverse words:", reverseWords('hello world javascript'));
+
+// e) Remove all whitespace
+function removeWhitespace(str) {
+    return str.replace(/\s+/g, '');
+}
+console.log("e) Remove whitespace:", `'${removeWhitespace('  hello   world  ')}'`);
+
+// f) Center padding
+function centerPad(str, length, char) {
+    if (str.length >= length) return str;
+    const padding = length - str.length;
+    const leftPad = Math.floor(padding / 2);
+    const rightPad = padding - leftPad;
+    return char.repeat(leftPad) + str + char.repeat(rightPad);
+}
+console.log("f) Center padding:", centerPad('hello', 10, '*'));
+console.log();
+
+// EXERCISE 6: Advanced String Problems
+console.log("📝 EXERCISE 6: Advanced String Problems");
+console.log("Tasks:");
+console.log("a) Find all unique characters in 'programming'");
+console.log("b) Find the first non-repeating character in 'aabbcc'");
+console.log("c) Check if two strings are anagrams: 'listen' and 'silent'");
+console.log("d) Generate all permutations of 'abc'");
+console.log("e) Find the most frequent character in 'hello world'");
+console.log("f) Compress string: 'aaabbbccc' -> 'a3b3c3'");
+console.log("Write your solution below:\n");
+
+// Your solution for Exercise 6:
+console.log("EXERCISE 6 - ADVANCED STRING PROBLEMS");
+
+// a) Unique characters
+function getUniqueChars(str) {
+    return [...new Set(str.split(''))];
+}
+console.log("a) Unique chars in 'programming':", getUniqueChars('programming'));
+
+// b) First non-repeating character
+function firstNonRepeating(str) {
+    const charCount = {};
+    for (let char of str) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+    for (let char of str) {
+        if (charCount[char] === 1) return char;
+    }
+    return null;
+}
+console.log("b) First non-repeating in 'aabbcc':", firstNonRepeating('aabbcc'));
+
+// c) Anagram check
+function areAnagrams(str1, str2) {
+    const normalize = str => str.toLowerCase().split('').sort().join('');
+    return normalize(str1) === normalize(str2);
+}
+console.log("c) 'listen' and 'silent' are anagrams:", areAnagrams('listen', 'silent'));
+
+// d) Permutations (simple version for short strings)
+function getPermutations(str) {
+    if (str.length <= 1) return [str];
+    const perms = [];
+    for (let i = 0; i < str.length; i++) {
+        const char = str[i];
+        const remaining = str.slice(0, i) + str.slice(i + 1);
+        const innerPerms = getPermutations(remaining);
+        for (let perm of innerPerms) {
+            perms.push(char + perm);
+        }
+    }
+    return perms;
+}
+console.log("d) Permutations of 'abc':", getPermutations('abc'));
+
+// e) Most frequent character
+function mostFrequentChar(str) {
+    const charCount = {};
+    let maxCount = 0;
+    let maxChar = '';
+    
+    for (let char of str) {
+        if (char !== ' ') { // Skip spaces
+            charCount[char] = (charCount[char] || 0) + 1;
+            if (charCount[char] > maxCount) {
+                maxCount = charCount[char];
+                maxChar = char;
+            }
+        }
+    }
+    return maxChar;
+}
+console.log("e) Most frequent char in 'hello world':", mostFrequentChar('hello world'));
+
+// f) String compression
+function compressString(str) {
+    let compressed = '';
+    let count = 1;
+    
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === str[i + 1]) {
+            count++;
+        } else {
+            compressed += str[i] + count;
+            count = 1;
+        }
+    }
+    return compressed;
+}
+console.log("f) Compress 'aaabbbccc':", compressString('aaabbbccc'));
+console.log();
+
+// EXERCISE 7: String and Array Combination
+console.log("📝 EXERCISE 7: String and Array Combination");
+console.log("Tasks:");
+console.log("a) Sort characters in 'javascript' alphabetically");
+console.log("b) Find common characters between 'hello' and 'world'");
+console.log("c) Group anagrams: ['eat', 'tea', 'tan', 'ate', 'nat', 'bat']");
+console.log("d) Find the shortest word in: ['programming', 'is', 'fun', 'and', 'challenging']");
+console.log("e) Create acronym from: 'Hypertext Markup Language'");
+console.log("Write your solution below:\n");
+
+// Your solution for Exercise 7:
+console.log("EXERCISE 7 - STRING AND ARRAY COMBINATION");
+
+// a) Sort characters
+function sortCharacters(str) {
+    return str.split('').sort().join('');
+}
+console.log("a) Sort 'javascript' chars:", sortCharacters('javascript'));
+
+// b) Common characters
+function findCommonChars(str1, str2) {
+    const set1 = new Set(str1.split(''));
+    const set2 = new Set(str2.split(''));
+    return [...set1].filter(char => set2.has(char));
+}
+console.log("b) Common chars in 'hello' and 'world':", findCommonChars('hello', 'world'));
+
+// c) Group anagrams
+function groupAnagrams(words) {
+    const groups = {};
+    for (let word of words) {
+        const sorted = word.split('').sort().join('');
+        if (!groups[sorted]) groups[sorted] = [];
+        groups[sorted].push(word);
+    }
+    return Object.values(groups);
+}
+console.log("c) Group anagrams:", groupAnagrams(['eat', 'tea', 'tan', 'ate', 'nat', 'bat']));
+
+// d) Shortest word
+function findShortestWord(words) {
+    return words.reduce((shortest, current) => current.length < shortest.length ? current : shortest);
+}
+console.log("d) Shortest word:", findShortestWord(['programming', 'is', 'fun', 'and', 'challenging']));
+
+// e) Create acronym
+function createAcronym(phrase) {
+    return phrase.split(' ').map(word => word[0].toUpperCase()).join('');
+}
+console.log("e) Acronym for 'Hypertext Markup Language':", createAcronym('Hypertext Markup Language'));
+console.log();
+
+console.log("🎯 BONUS CHALLENGES:");
+console.log("1. Implement a function to find the longest palindromic substring");
+console.log("2. Create a function that validates email addresses using string methods");
+console.log("3. Build a simple word frequency counter for a paragraph");
+console.log("4. Implement a basic string encryption/decryption function");
+console.log("5. Create a function that formats phone numbers: '1234567890' -> '(123) 456-7890'");
+console.log();
+
+// ============================================
 // 3. OBJECTS - Basic Operations
 // ============================================
 
@@ -327,6 +678,8 @@ console.log("Write your solution below:\n");
 // Your solution for Exercise 1:
 let arr1 = [10, 20, 30, 40, 50];
 // Write your code here...
+console.log();
+
 console.log("EXERCISE 01 - MY ANSWERS")
 
 arr1.push(60);
@@ -354,7 +707,7 @@ console.log("d) Find the product of all numbers");
 console.log("e) Check if all numbers are positive");
 console.log("f) Check if any number is greater than 8");
 console.log("Write your solution below:\n");
-*/
+
 // Your solution for Exercise 2:
 let arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // Write your code here...
@@ -367,7 +720,6 @@ console.log("d) " + arr2.reduce((acc, curr) => acc * curr));
 console.log("e) " + arr2.every(n => n > 0));
 console.log("f) " + arr2.some(n => n > 8));
 
-/*
 // EXERCISE 3: Array Search and Find
 console.log("📝 EXERCISE 3: Array Search and Find");
 console.log("Given array: ['apple', 'banana', 'cherry', 'date', 'elderberry']");
