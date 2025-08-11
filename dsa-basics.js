@@ -121,7 +121,6 @@ console.log("e) Last character:", str1[str1.length - 1]);
 console.log("f) Contains 'Script':", str1.includes('Script'));
 console.log("g) Replace JavaScript:", str1.replace('JavaScript', 'Python'));
 console.log();
-*/
 // EXERCISE 2: String Splitting and Joining
 console.log("📝 EXERCISE 2: String Splitting and Joining");
 console.log("Given string: 'apple,banana,cherry,date'");
@@ -138,12 +137,11 @@ let fruits = 'apple,banana,cherry,date';
 
 console.log("My answers - Exercise 02");
 
-console.log("a) " + fruits.split(','));
+console.log("a) ", fruits.split(','));
 console.log("b) " + fruits.split(',').join(" | "));
 console.log("c) " + fruits.split('a'));
 console.log("d) " + fruits.split(',')[0]);
 console.log("e) " + fruits.split(',').slice(-1)[0]);
-/*
 console.log("EXERCISE 2 - STRING SPLITTING/JOINING");
 console.log("a) Split by comma:", fruits.split(','));
 console.log("b) Join with |:", fruits.split(',').join(' | '));
@@ -166,6 +164,12 @@ console.log("Write your solution below:\n");
 
 // Your solution for Exercise 3:
 let sentence = 'The quick brown fox jumps over the lazy dog';
+console.log("a) ", sentence.indexOf("fox"));
+console.log("b) ", sentence.lastIndexOf('the'));
+console.log("c) ", sentence.startsWith('The'));
+console.log("d) ", sentence.endsWith('dog'));
+console.log("e) ", sentence.substring(10, 15));
+console.log("f) ", sentence.substring(10, 15));
 console.log("EXERCISE 3 - STRING SEARCH/INDEX");
 console.log("a) Index of 'fox':", sentence.indexOf('fox'));
 console.log("b) Last index of 'the':", sentence.lastIndexOf('the'));
@@ -174,6 +178,7 @@ console.log("d) Ends with 'dog':", sentence.endsWith('dog'));
 console.log("e) Substring 10-15:", sentence.substring(10, 15));
 console.log("f) Extract 'brown':", sentence.substring(10, 15));
 console.log();
+*/
 
 // EXERCISE 4: String Validation and Patterns
 console.log("📝 EXERCISE 4: String Validation and Patterns");
@@ -188,6 +193,35 @@ console.log("Write your solution below:\n");
 // Your solution for Exercise 4:
 console.log("EXERCISE 4 - STRING VALIDATION/PATTERNS");
 
+function isAlphanumeric(string) {
+    let result = /^[a-zA-Z0-9]+$/.test(string);
+
+    if (result = true) {
+        return "It is alphanumeric"
+    } else {
+        return "It is not alphanumeric"
+    }
+}
+console.log('a)', isAlphanumeric('abc123'));
+
+function countVowels(myString) {
+    return myString.toLowerCase().match(/[aeiou]/g)?.length || 0;
+}
+console.log('b) ', countVowels('programming'));
+
+function countConsonants(myString) {
+    return myString.toLowerCase().match(/[bcdfghjklmnpqrstvwxyz]/g)?.length || 0;
+}
+console.log('c) ', countConsonants('javascript'));
+
+function isPalindrome(myStr) {
+    let stringFormat = myStr.toLowerCase().replace(/[a-zA-Z]/g).length || 0;
+
+    return 
+}
+console.log('d) ', );
+console.log('e) ', );
+/*
 // a) Alphanumeric check
 function isAlphanumeric(str) {
     return /^[a-zA-Z0-9]+$/.test(str);
