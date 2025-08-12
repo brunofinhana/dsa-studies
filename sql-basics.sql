@@ -181,6 +181,8 @@ SELECT department, SUM(salary) AS dept_payroll
 FROM employees 
 GROUP BY department;
 
+
+-- Ago 12 2025
 -- ============================================
 -- 7. GROUP BY and HAVING
 -- ============================================
