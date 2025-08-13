@@ -193,34 +193,53 @@ console.log("Write your solution below:\n");
 // Your solution for Exercise 4:
 console.log("EXERCISE 4 - STRING VALIDATION/PATTERNS");
 
-function isAlphanumeric(string) {
-    let result = /^[a-zA-Z0-9]+$/.test(string);
+// Exercise a
+function isAlphanumeric(myString) {
+    let result = /^[a-zA-Z-0-9]+$/.test(myString);
 
-    if (result = true) {
-        return "It is alphanumeric"
+    if(result === true) {
+        return ("\"" + myString + "\"" + " is alphanumeric")
     } else {
-        return "It is not alphanumeric"
+        return ("\"" + myString + "\"" + " is not alphanumeric")
     }
 }
-console.log('a)', isAlphanumeric('abc123'));
+console.log("a) ", isAlphanumeric("abc123"))
 
-function countVowels(myString) {
-    return myString.toLowerCase().match(/[aeiou]/g)?.length || 0;
+// Exercise b
+function countVowels(str) {
+    let numVowels =  str.toLowerCase().match(/[aeiou]/g)?.length || 0
+    return "\"" + str + "\"" + " has " + numVowels + " vowels."
 }
-console.log('b) ', countVowels('programming'));
+console.log("b) ", countVowels("programming"))
 
-function countConsonants(myString) {
-    return myString.toLowerCase().match(/[bcdfghjklmnpqrstvwxyz]/g)?.length || 0;
+// Exercise c
+function countConsonants(myStr) {
+    let numConsonants = myStr.toLowerCase().match(/[bcdfghjklmnpqrstvwxyz]/g)?.length || 0
+    return "\"" + myStr + "\"" + " has " + numConsonants + " consonants."
 }
-console.log('c) ', countConsonants('javascript'));
+console.log("c) ", countConsonants("JavaScript"))
 
-function isPalindrome(myStr) {
-    let stringFormat = myStr.toLowerCase().replace(/[a-zA-Z]/g).length || 0;
-
-    return 
+// Exercise d
+function isPalindrome(aStr) {
+    let formatedStr = aStr.toLowerCase().replace(/[^a-z]/g, "")
+    let reversedStr = formatedStr.split('').reverse().join('')
+    if(formatedStr === reversedStr) {
+        return "It is a palindrome"
+    } else {
+        return "Fool you"
+    }
 }
-console.log('d) ', );
-console.log('e) ', );
+console.log('d) ', isPalindrome("A man a plan a canal Panama"));
+
+// Exercise e
+function findLongestWord(aString) {
+    const words = aString.split(' ')
+    let longestWord = words.reduce((longest, current) => current.length > longest.length ? current : longest)
+
+    return "The longest word is: \"" + longestWord + "\""
+}
+console.log('e) ', findLongestWord("The quick brown fox is lightning fast"))
+
 /*
 // a) Alphanumeric check
 function isAlphanumeric(str) {
