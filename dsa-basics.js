@@ -178,7 +178,6 @@ console.log("d) Ends with 'dog':", sentence.endsWith('dog'));
 console.log("e) Substring 10-15:", sentence.substring(10, 15));
 console.log("f) Extract 'brown':", sentence.substring(10, 15));
 console.log();
-*/
 
 // EXERCISE 4: String Validation and Patterns
 console.log("📝 EXERCISE 4: String Validation and Patterns");
@@ -196,12 +195,12 @@ console.log("EXERCISE 4 - STRING VALIDATION/PATTERNS");
 // Exercise a
 function isAlphanumeric(myString) {
     let result = /^[a-zA-Z-0-9]+$/.test(myString);
-
+    
     if(result === true) {
         return ("\"" + myString + "\"" + " is alphanumeric")
     } else {
         return ("\"" + myString + "\"" + " is not alphanumeric")
-    }
+}
 }
 console.log("a) ", isAlphanumeric("abc123"))
 
@@ -227,7 +226,7 @@ function isPalindrome(aStr) {
         return "It is a palindrome"
     } else {
         return "Fool you"
-    }
+}
 }
 console.log('d) ', isPalindrome("A man a plan a canal Panama"));
 
@@ -235,12 +234,13 @@ console.log('d) ', isPalindrome("A man a plan a canal Panama"));
 function findLongestWord(aString) {
     const words = aString.split(' ')
     let longestWord = words.reduce((longest, current) => current.length > longest.length ? current : longest)
-
+    
     return "The longest word is: \"" + longestWord + "\""
 }
 console.log('e) ', findLongestWord("The quick brown fox is lightning fast"))
 
-/*
+// ANSWERS:
+
 // a) Alphanumeric check
 function isAlphanumeric(str) {
     return /^[a-zA-Z0-9]+$/.test(str);
@@ -273,6 +273,8 @@ function findLongestWord(str) {
 }
 console.log("e) Longest word in 'The quick brown fox':", findLongestWord('The quick brown fox'));
 console.log();
+*/
+
 
 // EXERCISE 5: String Transformation
 console.log("📝 EXERCISE 5: String Transformation");
@@ -288,6 +290,28 @@ console.log("Write your solution below:\n");
 // Your solution for Exercise 5:
 console.log("EXERCISE 5 - STRING TRANSFORMATION");
 
+function toTitleCase(aString) {
+    let aStringFormatted = aString.toLowerCase().split(' ').map((word) => {
+        return word.charAt(0).toUpperCase() + word.slice(1)
+    }).join(' ')
+    return ("Original string: " + aString + " | Formatted string: " + aStringFormatted)
+}
+console.log("a) ", toTitleCase("HEllO wOrlD"))
+
+function toSnakeCase(str) {
+    return str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`)
+}
+console.log("b)", toSnakeCase("nowThisIsSnakeCase"))
+
+function toCamelCase(aStr) {
+    return aStr.replace(/_([a-z])/g, (match, letter) => letter.toUpperCase())
+}
+console.log("c)", toCamelCase("a_sentence_here"))
+console.log("d)", )
+console.log("e)", )
+console.log("f)", )
+
+/*
 // a) Title case
 function toTitleCase(str) {
     return str.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join(' ');
@@ -297,25 +321,25 @@ console.log("a) Title case:", toTitleCase('hello world'));
 // b) camelCase to snake_case
 function camelToSnake(str) {
     return str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
-}
+    }
 console.log("b) camelCase to snake_case:", camelToSnake('camelCase'));
 
 // c) snake_case to camelCase
 function snakeToCamel(str) {
     return str.replace(/_([a-z])/g, (match, letter) => letter.toUpperCase());
-}
+    }
 console.log("c) snake_case to camelCase:", snakeToCamel('snake_case'));
 
 // d) Reverse words
 function reverseWords(str) {
     return str.split(' ').reverse().join(' ');
-}
-console.log("d) Reverse words:", reverseWords('hello world javascript'));
-
-// e) Remove all whitespace
-function removeWhitespace(str) {
-    return str.replace(/\s+/g, '');
-}
+    }
+    console.log("d) Reverse words:", reverseWords('hello world javascript'));
+    
+    // e) Remove all whitespace
+    function removeWhitespace(str) {
+        return str.replace(/\s+/g, '');
+        }
 console.log("e) Remove whitespace:", `'${removeWhitespace('  hello   world  ')}'`);
 
 // f) Center padding
@@ -325,10 +349,12 @@ function centerPad(str, length, char) {
     const leftPad = Math.floor(padding / 2);
     const rightPad = padding - leftPad;
     return char.repeat(leftPad) + str + char.repeat(rightPad);
-}
-console.log("f) Center padding:", centerPad('hello', 10, '*'));
-console.log();
-
+    }
+    console.log("f) Center padding:", centerPad('hello', 10, '*'));
+    console.log();
+*/
+    
+/*
 // EXERCISE 6: Advanced String Problems
 console.log("📝 EXERCISE 6: Advanced String Problems");
 console.log("Tasks:");
