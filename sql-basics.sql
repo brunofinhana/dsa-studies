@@ -275,18 +275,18 @@ WHERE e1.salary = (
 -- ============================================
 
 -- Update single record
--- UPDATE employees SET salary = 82000 WHERE id = 3;
+UPDATE employees SET salary = 82000 WHERE id = 3;
 
 -- Update multiple records
--- UPDATE employees SET salary = salary * 1.05 WHERE department = 'Engineering';
+UPDATE employees SET salary = salary * 1.05 WHERE department = 'Engineering';
 
 -- Update with conditions
--- UPDATE employees 
--- SET is_active = FALSE 
--- WHERE hire_date < '2018-01-01';
+UPDATE employees 
+SET is_active = FALSE 
+WHERE hire_date < '2018-01-01';
 
 -- Delete records (be careful!)
--- DELETE FROM employees WHERE is_active = FALSE;
+DELETE FROM employees WHERE is_active = FALSE;
 
 -- ============================================
 -- PRACTICE EXERCISES
@@ -296,30 +296,40 @@ WHERE e1.salary = (
 -- Write queries to answer these questions:
 
 -- 1.1) Find all employees hired after 2020
-SELECT first_name, last_name, hire_date 
-FROM employees 
-WHERE hire_date > '2020-01-01';
+-- YOUR ANSWER:
+    select * from employees where hire_date > '2020-01-01'
 
 -- 1.2) Find employees whose first name starts with 'S'
 -- YOUR ANSWER:
-
+    select first_name from employees where first_name like 's%'
 
 -- 1.3) Count how many employees are in each department
 -- YOUR ANSWER:
-
+    select department, count(*) AS "# of employees" from employees GROUP by department
 
 -- 1.4) Find the highest paid employee
 -- YOUR ANSWER:
-
+    select first_name, max(salary) from employees
 
 -- 📝 EXERCISE 2: Intermediate Queries
--- 2.1) Find departments with more than 2 employees
+-- * 2.1) Find departments with more than 2 employees
 -- YOUR ANSWER:
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department
+HAVING COUNT(*) > 2;
 
 
 -- 2.2) Calculate the total hours worked on each project
 -- YOUR ANSWER:
-
+SELECT 
+    p.project_id, 
+    p.project_name,
+    SUM(ep.hours_worked) AS total_hours
+FROM employee_projects ep
+JOIN projects p ON ep.project_id = p.project_id
+GROUP BY p.project_id, p.project_name
+ORDER BY p.project_id;
 
 -- 2.3) Find employees who are working on more than one project
 -- YOUR ANSWER:
